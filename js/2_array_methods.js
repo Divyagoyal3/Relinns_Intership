@@ -168,16 +168,52 @@ console.log('array1:', array7);
 
 
 console.log("hgdiueh");
-function func() {
- 
-    // Original array
-    let arr = [2, 5, 8, 1, 4];
-    console.log(arr.sort(function (a, b) {
-        console.log(a);
-   
-        // return a + 2 * b;
-    }));
-    // console.log(arr);
-    
-}
-func();
+
+//The Array.prototype.slice() method in JavaScript is used to extract a portion of an array and returns a new array containing the selected elements. It doesn't modify the original array; instead, it creates a shallow copy of the specified portion.
+let originalArray = [1, 2, 3, 4, 5];
+
+// Extract elements from index 1 to index 3 (not including 3)
+let slicedArray = originalArray.slice(1, 3);
+
+console.log(slicedArray); // Output: [2, 3]
+console.log(originalArray); // Output: [1, 2, 3, 4, 5] (original array remains unchanged)
+
+//In this example, slice(1, 3) extracts elements from index 1 to index 2 (not including 3) from the originalArray, creating a new array (slicedArray) with the extracted elements.
+
+//If no parameters are provided, slice() creates a shallow copy of the entire array:
+let originalArray1 = [1, 2, 3, 4, 5];
+
+let shallowCopy = originalArray1.slice();
+
+console.log(shallowCopy); // Output: [1, 2, 3, 4, 5]
+console.log(originalArray1); // Output: [1, 2, 3, 4, 5] (original array remains unchanged)
+
+
+
+// The Array.prototype.some() method in JavaScript is used to test whether at least one element in the array passes the provided function. It returns a Boolean value indicating whether the callback function returns true for at least one element in the array. The method does not modify the original array.
+
+// The syntax for some() is as follows
+
+// array.some(callback(element[, index[, array]])[, thisArg]);
+// callback: A function to test each element of the array. It takes three parameters: element (the current element being processed), index (the index of the current element), and array (the array some() was called upon).
+
+// thisArg (optional): Object to use as this when executing the callback function.
+
+// Here's an example of using some() to check if at least one element in an array is greater than 5:
+
+
+let numbers8 = [1, 3, 5, 7, 9];
+
+let isAtLeastOneGreaterThan5 = numbers8.some(function(element) {
+  return element > 5;
+});
+
+console.log(isAtLeastOneGreaterThan5); // Output: true (because 7 and 9 are greater than 5)
+
+let isAtLeastOneGreaterThan52 = numbers.some(element => element > 5);
+// The some() method stops iterating through the array as soon as it finds an element for which the callback returns true. If no such element is found, it returns false.
+
+
+const arr9 = [5,10,4,40];
+let sorted = arr9.sort();
+console.log(sorted);
