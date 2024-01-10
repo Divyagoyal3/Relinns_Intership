@@ -43,11 +43,7 @@ const dataset = [
 
  //  Task 2
  
- function allEmail(myarr){
-    myarr.forEach((items)=>{
-    email.push(items.email) 
-    // console.log(items.email)
-})
+ 
 
 
 function returnEmailstart(dataset) {
@@ -69,7 +65,7 @@ function printtask(arr) {
         const newfname = x.first_name.charAt(0).toUpperCase() + x.first_name.slice(1);
         const newlname = x.last_name.charAt(0).toUpperCase() + x.last_name.slice(1);
 
-        return Hi, I am ${newFname} ${newLname}. You can reach out to me on ${x.email}.;
+        // return Hi, I am ${newFname} ${newLname}. You can reach out to me on ${x.email}.;
        
     });
 }
@@ -77,13 +73,13 @@ function printtask(arr) {
 console.log(printtask(dataset));
 
 //Task 4
-//  function sortemail(dataset) {
-//     dataset.sort((a, b) => a.email.localeCompare(b.email));
-//     return dataset;
-// }
+ function sortemail(dataset) {
+    dataset.sort((a, b) => a.email.localeCompare(b.email));
+    return dataset;
+}
 
-// const sorteddata = sortemail(dataset);
-// console.log(sorteddata);
+const sorteddata = sortemail(dataset);
+console.log(sorteddata);
 
 
 
