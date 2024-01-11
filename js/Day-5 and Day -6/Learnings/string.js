@@ -228,11 +228,11 @@ console.log(greetings);
 console.log(greetings.trimStart());
 // Expected output: "Hello world!   ";
 
-let str = "   foo  ";
+let st1 = "   foo  ";
 
-console.log(str.length); // 8
+console.log(st1.length); // 8
 
-str = str.trimStart();
+str = st1.trimStart();
 console.log(str.length); // 5
 
 
@@ -298,17 +298,17 @@ console.log(text.slice(-5, -2)); // "zil"
 
 // 11 .The split() method of String values takes a pattern and divides this string into an ordered list of substrings by searching for the pattern, puts these substrings into an array, and returns the array
 
-const str = 'The quick brown fox jumps over the lazy dog.';
+const str12 = 'The quick brown fox jumps over the lazy dog.';
 
-const words = str.split(' ');
+const words = str12.split(' ');
 console.log(words[3]);
 // Expected output: "fox"
 
-const chars = str.split('');
+const chars = str12.split('');
 console.log(chars[8]);
 // Expected output: "k"
 
-const strCopy = str.split();
+const strCopy = str12.split();
 console.log(strCopy);
 // Expected output: Array ["The quick brown fox jumps over the lazy dog."]
 
@@ -375,13 +375,263 @@ console.log(str1.startsWith("not to be", 10)); // true
 
 //14.The replace() method of String values returns a new string with one, some, or all matches of a pattern replaced by a replacement. The pattern can be a string or a RegExp, and the replacement can be a string or a function called for each match. If pattern is a string, only the first occurrence will be replaced. The original string is left unchanged.
 
-const paragraph = "I think Ruth's dog is cuter than your dog!";
+const paragraph22 = "I think Ruth's dog is cuter than your dog!";
 
-console.log(paragraph.replace("Ruth's", 'my'));
+console.log(paragraph22.replace("Ruth's", 'my'));
 // Expected output: "I think my dog is cuter than your dog!"
 
-const regex = /Dog/i;
-console.log(paragraph.replace(regex, 'ferret'));
+const regex22 = /Dog/i;
+console.log(paragraph.replace(regex22, 'ferret'));
 // Expected output: "I think Ruth's ferret is cuter than your dog!"
 
-  
+  // 15.// String.prototype.replaceAll()
+// The replaceAll() method of String values returns a new string with all matches of a pattern replaced by a replacement. The pattern can be a string or a RegExp, and the replacement can be a string or a function to be called for each match. The original string is left unchanged.
+
+// Try it
+const paragraph23 = "I think Ruth's dog is cuter than your dog!";
+
+console.log(paragraph23.replaceAll('dog', 'monkey'));
+// Expected output: "I think Ruth's monkey is cuter than your monkey!"
+
+// Global flag required when calling replaceAll with regex
+const regex2 = /Dog/gi;
+console.log(paragraph.replaceAll(regex2, 'ferret'));
+// Expected output: "I think Ruth's ferret is cuter than your ferret!"
+
+// String.prototype.replaceAll()
+// The replaceAll() method of String values returns a new string with all matches of a pattern replaced by a replacement. The pattern can be a string or a RegExp, and the replacement can be a string or a function to be called for each match. The original string is left unchanged.
+
+// Try it
+const paragraph = "I think Ruth's dog is cuter than your dog!";
+
+console.log(paragraph.replaceAll('dog', 'monkey'));
+// Expected output: "I think Ruth's monkey is cuter than your monkey!"
+
+// Global flag required when calling replaceAll with regex
+const regex = /Dog/gi;
+console.log(paragraph.replaceAll(regex, 'ferret'));
+// Expected output: "I think Ruth's ferret is cuter than your ferret!"
+
+// 16The search() method of String values executes a search for a match between a regular expression and this string, returning the index of the first match in the string.
+
+const paragraph2 = "I think Ruth's dog is cuter than your dog!";
+
+// Anything not a word character, whitespace or apostrophe
+// const regex = /[^\w\s']/g;
+
+console.log(paragraph2.search(regex));
+// Expected output: 41
+
+// console.log(paragraph2[paragraph2.search(regex)]);
+// Expected output: "!"
+const str = "hey JudE";
+const re = /[A-Z]/;
+const reDot = /[.]/;
+console.log(str.search(re)); // returns 4, which is the index of the first capital letter "J"
+console.log(str.search(reDot)); // returns -1 cannot find '.' dot punctuation
+
+// 17. includes() The includes() method of String values performs a case-sensitive search to determine whether a given string may be found within this string, returning true or false as appropriate.
+
+
+const sentence3 = 'The quick brown fox jumps over the lazy dog.';
+
+const word = 'fox';
+
+console.log(
+  `The word "${word}" ${
+    sentence3.includes(word) ? 'is' : 'is not'
+  } in the sentence`,
+);
+// Expected output: "The word "fox" is in the sentence"
+
+
+// case-sensitivity
+"Blue Whale".includes("blue"); // returns false
+
+
+const str3 = "To be, or not to be, that is the question.";
+
+console.log(str3.includes("To be")); // true
+console.log(str3.includes("question")); // true
+console.log(str3.includes("nonexistent")); // false
+console.log(str3.includes("To be", 1)); // false
+console.log(str3.includes("TO BE")); // false
+console.log(str3.includes("")); // true
+
+
+
+//17.indexOf()
+// String.prototype.indexOf()
+// The indexOf() method of String values searches this string and returns the index of the first occurrence of the specified substring. It takes an optional starting position and returns the first occurrence of the specified substring at an index greater than or equal to the specified number.
+
+// Try it
+const paragraph4 = "I think Ruth's dog is cuter than your dog!";
+
+const searchTerm = 'dog';
+const indexOfFirst = paragraph4.indexOf(searchTerm);
+
+console.log(`The index of the first "${searchTerm}" is ${indexOfFirst}`);
+// Expected output: "The index of the first "dog" is 15"
+
+console.log(
+  `The index of the second "${searchTerm}" is ${paragraph4.indexOf(
+    searchTerm,
+    indexOfFirst + 1,
+  )}`,
+);
+// Expected output: "The index of the second "dog" is 38"
+
+// indexOf(searchString)
+// indexOf(searchString, position)
+// searchString
+// Substring to search for. All values are coerced to strings, so omitting it or passing undefined causes indexOf() to search for the string "undefined", which is rarely what you want.
+
+// position Optional
+// The method returns the index of the first occurrence of the specified substring at a position greater than or equal to position, which defaults to 0. If position is greater than the length of the calling string, the method doesn't search the calling string at all. If position is less than zero, the method behaves as it would if position were 0.
+
+// 'hello world hello'.indexOf('o', -5) returns 4 — because it causes the method to behave as if the second argument were 0, and the first occurrence of o at a position greater or equal to 0 is at position 4.
+// 'hello world hello'.indexOf('world', 12) returns -1 — because, while it's true the substring world occurs at index 6, that position is not greater than or equal to 12.
+// 'hello world hello'.indexOf('o', 99) returns -1 — because 99 is greater than the length of hello world hello, which causes the method to not search the string at all.
+
+
+const str5 = "To be, or not to be, that is the question.";
+let count = 0;
+let position = str5.indexOf("e");
+
+while (position !== -1) {
+  count++;
+  position = str5.indexOf("e", position + 1);
+}
+
+console.log(count); // 4
+
+
+
+// The index of the first occurrence of searchString found, or -1 if not found.
+
+// Return value when using an empty search string
+// Searching for an empty search string produces strange results. With no second argument, or with a second argument whose value is less than the calling string's length, the return value is the same as the value of the second argument:
+
+"hello world".indexOf(""); // returns 0
+"hello world".indexOf("", 0); // returns 0
+"hello world".indexOf("", 3); // returns 3
+"hello world".indexOf("", 8); // returns 8
+
+"hello world".indexOf("", 11); // returns 11
+"hello world".indexOf("", 13); // returns 11
+"hello world".indexOf("", 22); // returns 11
+// In the former instance, the method behaves as if it found an empty string just after the position specified in the second argument. In the latter instance, the method behaves as if it found an empty string at the end of the calling string.
+
+
+
+
+// Strings are zero-indexed: The index of a string's first character is 0, and the index of a string's last character is the length of the string minus 1.
+
+"Blue Whale".indexOf("Blue"); // returns  0
+"Blue Whale".indexOf("Blute"); // returns -1
+ const items ="Blue Whale".indexOf("Whale", 0); // returns  5
+ console.log(items);
+"Blue Whale".indexOf("Whale", 5); // returns  5
+"Blue Whale".indexOf("Whale", 7); // returns -1
+"Blue Whale".indexOf(""); // returns  0
+"Blue Whale".indexOf("", 9); // returns  9
+"Blue Whale".indexOf("", 10); // returns 10
+"Blue Whale".indexOf("", 11); // returns 10
+// The indexOf() method is case sensitive. For example, the following 
+"Blue Whale".indexOf("blue"); // returns -1
+
+const myString = "brie, pepper jack, cheddar";
+const myCapString = "Brie, Pepper Jack, Cheddar";
+
+
+
+console.log(myString.indexOf("cheddar")); // 19
+console.log(myCapString.indexOf("cheddar")); // -1
+
+
+// 18. The charAt() method of String values returns a new string consisting of the single UTF-16 code unit at the given index.
+
+// charAt() always indexes the string as a sequence of UTF-16 code units, so it may return lone surrogates. To get the full Unicode code point at the given index, use String.prototype.codePointAt() and String.fromCodePoint().
+
+// Try it
+
+
+const anyString = "Brave new world";
+console.log(`The character at index 0   is '${anyString.charAt()}'`);
+// No index was provided, used 0 as default
+
+console.log(`The character at index 0   is '${anyString.charAt(0)}'`);
+console.log(`The character at index 1   is '${anyString.charAt(1)}'`);
+console.log(`The character at index 2   is '${anyString.charAt(2)}'`);
+console.log(`The character at index 3   is '${anyString.charAt(3)}'`);
+console.log(`The character at index 4   is '${anyString.charAt(4)}'`);
+console.log(`The character at index 999 is '${anyString.charAt(999)}'`);
+
+
+// The character at index 0   is 'B'
+
+// The character at index 0   is 'B'
+// The character at index 1   is 'r'
+// The character at index 2   is 'a'
+// The character at index 3   is 'v'
+// The character at index 4   is 'e'
+// The character at index 999 is ''
+
+
+
+const str8 = "𠮷𠮾";
+console.log(String.fromCodePoint(str.codePointAt(0))); // "𠮷"
+console.log([...str8][0]); // "𠮷"
+
+
+// 19. The charCodeAt() method of String values returns an integer between 0 and 65535 representing the UTF-16 code unit at the given index.
+
+const sentence65 = 'The quick brown fox jumps over the lazy dog.';
+
+const index = 4;
+
+console.log(
+  `Character code ${sentence65.charCodeAt(index)} is equal to ${sentence65.charAt(
+    index,
+  )}`,
+);
+// Expected output: "Character code 113 is equal to q"
+
+
+// An integer between 0 and 65535 representing the UTF-16 code unit value of the character at the specified index. If index is out of range of 0 – str.length - 1, charCodeAt() returns NaN.
+
+
+// 20.The codePointAt() method of String values returns a non-negative integer that is the Unicode code point value of the character starting at the given index. Note that the index is still based on UTF-16 code units, not Unicode code points.
+const icons = '☃★♲';
+
+console.log(icons.codePointAt(1));
+// Expected output: "9733"
+
+
+// 21. concat() method
+// The concat() method of String values concatenates the string arguments to this string and returns a new string.
+
+const str11 = 'Hello';
+const str21 = 'World';
+
+console.log(str11.concat(' ', str21));
+// Expected output: "Hello World"
+
+console.log(str21.concat(', ', str11));
+// Expected output: "World, Hello"
+
+
+// 22.The endsWith() method of String values determines whether a string ends with the characters of this string, returning true or false as appropriate.
+
+const str10 = 'Cats are the best!';
+
+console.log(str10.endsWith('best!'));
+// Expected output: true
+
+console.log(str10.endsWith('best', 17));
+// Expected output: true
+
+const str20 = 'Is this a question?';
+
+console.log(str20.endsWith('question'));
+// Expected output: false
