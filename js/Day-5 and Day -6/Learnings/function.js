@@ -137,3 +137,20 @@ function sum(a, b) {
   // Expected output: "function abs() { [native code] }"
 
   
+// compose function
+
+
+const add2 = (x) => x + 1;
+const multiplyByTwo = (x) => x * 2;
+const square = (x) => x ** 2;
+
+const composedFunction = compose(square, multiplyByTwo, add2);
+
+const result = composedFunction(5);
+console.log(result);
+
+function compose(...functions) {
+  return function (arg) {
+    return functions.reduceRight((result, fn) => fn(result), arg);
+  };
+}
