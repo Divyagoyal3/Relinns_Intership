@@ -1,0 +1,5 @@
+In JavaScript, object mutation refers to the process of modifying the properties
+or values of an object after its creation. Objects in JavaScript are mutable,
+which means you can change their properties, add new properties, or remove existing ones.
+
+
