@@ -3,3 +3,21 @@ or values of an object after its creation. Objects in JavaScript are mutable,
 which means you can change their properties, add new properties, or remove existing ones.
 
 
+In this example:
+
+Initially, an object named person is created with properties name and age.
+The age property is then modified, changing its value from 30 to 31.
+A new property gender is added to the object.
+The age property is removed using the delete operator.
+After these mutations, the person object looks like:
+
+
+
+It's important to note that when you mutate an object, 
+the changes are reflected in-place, affecting the original object. 
+Object mutation can be a powerful feature, 
+but developers need to be cautious, especially in larger codebases,
+to prevent unintended side effects. Additionally, when working with complex data structures
+or state management, immutability is sometimes preferred to avoid certain challenges associated 
+with mutable data. Libraries like Immutable.js or approaches using modern JavaScript (ES6+) 
+features can help in achieving immutability.

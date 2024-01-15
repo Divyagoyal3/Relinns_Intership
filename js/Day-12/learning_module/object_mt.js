@@ -14,3 +14,9 @@ person.gender = "Male";
 delete person.age;
 
 console.log(person);
+
+
+// // {
+//   name: "John",
+//   gender: "Male",
+// // }
