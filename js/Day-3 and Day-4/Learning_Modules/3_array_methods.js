@@ -546,7 +546,8 @@ console.log(plants);
 
 //29. unshift() method
 Array.prototype.unshift()
-// The unshift() method of Array instances adds the specified elements to the beginning of an array and returns the new length of the array.
+// The unshift() method of Array instances adds the specified elements to the
+//  beginning of an array and returns the new length of the array.
 const array00 = [1, 2, 3];
 
 console.log(array00.unshift(4, 5));
