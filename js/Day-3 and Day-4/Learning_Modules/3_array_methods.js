@@ -115,7 +115,7 @@ let originalArray = [1, 2, 3, 4, 5];
  let slice1 = originalArray.slice(2);
   let slicedArray1 = originalArray.slice(-1, -3);
  let slicedArray2 = originalArray.slice(2,3);
-console.log(slice1);
+  console.log(slice1);
  console.log(slicedArray1); // Output: [2, 3]
 console.log(slicedArray2);
 console.log(originalArray); // Output: [1, 2, 3, 4, 5] (original array remains unchanged)

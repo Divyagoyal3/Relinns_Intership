@@ -1,148 +1,295 @@
 // Function 1
+
 // Create 3 functions that takes an argument
 
-function createdFunction1 (first)
+
+
+function createdOrder(cart)
+
 {
-    let promise1 = new Promise((myResolve1,meReject1)=>
+
+    let promiseCommit = new Promise((myResolveFirst,meRejectFirst)=>
+
     {
-        if(first === true)
+
+        if(cart === true)
+
         //promise will resolve with a message "resolved by 'function name'", if the passed argument is true
+
         {
-            myResolve1("Resolved by createdFunction1");   
+
+            myResolveFirst("Resolved by createdOrder");   
+
         }
+
         else{
-            myReject1("Rejected by createdFunction1");
+
+            myRejectFirst("Rejected by createdOrder");
+
         }
+
     })
+
     // function returns a promise
-    return promise1;  
+
+    return promiseCommit;  
+
 }
+
+
 
 // Function 2
-function createdFunction2 (second)
+
+function proceedToPay(cart)
+
 {
-    let promise2 = new Promise((myResolve2,myReject2)=>
+
+    let promiseLogged = new Promise((myResolveSecond,myRejectSecond)=>
+
     {
-        if(second === true)
+
+        if(cart === true)
+
          //promise will resolve with a message "resolved by 'function name'", if the passed argument is true
+
         {
-            myResolve2("Resolved by createdFunction2");
+
+            myResolveSecond("Resolved by proceedToPay");
+
         }
+
         // The promise will reject with a message "rejected by 'function name'",if the passed argument is false
+
         else{
-            myReject2("Rejected by createdFunction2");
+
+            myRejectSecond("Rejected by proceedToPay");
+
         }
+
     })
+
     // functions returns a promise
-    return promise2;
+
+    return promiseLogged;
+
 }
+
+
 
 // Function 3
-function createdFunction3 (third)
+
+function showOrder(cart)
+
 {
-    let promise3 = new Promise((myResolve3,meReject3)=>
+
+    let promised = new Promise((myResolveThird,meRejectThird)=>
+
     {
-        if(third === true)
+
+        if(cart === true)
+
          //promise will resolve with a message "resolved by 'function name'", if the passed argument is true
+
         {
-            myResolve3("Resolved by createdFunction3");
+
+            myResolveThird("Resolved by showOrder");
+
         }
+
         // The promise will reject with a message "rejected by 'function name'",if the passed argument is false
+
         else{
-            myReject3("Rejected by createdFunction3");
+
+            myRejectThird("Rejected by showOrder");
+
         }
+
     })
+
     // functions returns a promise
-    return promise3;
+
+    return promised;
+
 }
 
+
+
 // step 5
+
 // Call all the functions parallelly and console the promise value.
 
+
+
 //step 5.1
+
 // 5.1 Case 1: Arguments passed to all functions are true
+
 Promise.all([
-createdFunction1(true),
-createdFunction2(true),
-createdFunction3(true)]).then((resultSet)=>{
+
+createdOrder(true),
+
+proceedToPay(true),
+
+showOrder(true)]).then((resultSet)=>{
+
     console.log(resultSet)
+
 }).catch((errorFirst)=>{
+
     console.log(errorFirst);
+
 })
 
+
+
 //step 5.2
+
 // 5.2 Case 2: Arguments passed to 2nd functions is false 
-Promise.all([createdFunction1(true),
-createdFunction2(false),
-createdFunction3(true)]).then((resultAppeared)=>{
+
+Promise.all([createdOrder(true),
+
+proceedToPay(false),
+
+showOrder(true)]).then((resultAppeared)=>{
+
     console.log(resultAppeared)
+
 }).catch((errorSecond)=>{
+
     console.log(errorSecond);
+
 })
+
+
+
 
 
 //promise chaining
+
 // Call all the functions in sequence by promise chaining and console the promise value.
+
 // step 6.1
+
 // 6.1 Case 1: Arguments passed to all functions are true
-createdFunction1(true)
-.then(resultAppeared2 => createdFunction2(true))
-.then(resultAppeared3 => createdFunction3(true))
+
+createdOrder(true)
+
+.then(resultAppearedSecond => proceedToPay(true))
+
+.then(resultAppearedThird => showOrder(true))
+
 .then(resultPrinted =>{
+
     console.log(resultPrinted);
-})
-.catch((errorThird)=>{
-    console.log(errorThird)
+
 })
 
+.catch((errorThird)=>{
+
+    console.log(errorThird)
+
+})
+
+
+
  //step 6.2
+
 //  6.2 Case 2: Arguments passed to 2nd functions is false 
-createdFunction1(true)
-.then(resultLogged2 => createdFunction2(false))
-.then(resulLogged3 => createdFunction3(true))
+
+createdOrder(true)
+
+.then(resultLoggedFirst => proceedToPay(false))
+
+.then(resulLoggedThird => showOrder(true))
+
 .then(resultLogged =>{
+
     console.log(resultLogged);
+
 })
+
 .catch((errorFourth)=>{
+
     console.log(errorFourth)
+
 })
+
+
+
+
 
 
 
 // step 7
+
 // Call all the functions in sequence by async await and console the promise value.
+
 // step 7.1
+
 // 7.1 Case 1: Arguments passed to all functions are true
+
 async function asyncHandleFirst()
+
 {
+
     try{
-        let resultSet1 = await createdFunction1(true);
-        let resultSet2 = await createdFunction2(true);
-        let resultSet3 = await createdFunction3(true);
-        console.log(resultSet3);
+
+        let resultSetFirst = await createdOrder(true);
+
+        let resultSetSecond = await proceedToPay(true);
+
+        let resultSetThird = await showOrder(true);
+
+        console.log(resultSetThird);
+
     }
+
     catch(error)
+
     {
+
         console.log(error);
+
     }
+
 }
+
 asyncHandleFirst();
 
 
+
+
+
 // step 7.2
+
 // 7.2 Case 2: Arguments passed to 2nd functions is false 
 
+
+
 async function asyncHandleSecond()
+
 {
+
     try{
-        let resultSet1 = await createdFunction1(true);
-        let resultSet2 = await createdFunction2(false);
-        let resultSet3 = await createdFunction3(true);
-        console.log(resultSet3);
+
+        let resultSetFirst = await createdOrder(true);
+
+        let resultSetSecond = await proceedToPay(false);
+
+        let resultSetThird = await showOrder(true);
+
+        console.log(resultSetThird);
+
     }
+
     catch(error)
+
     {
+
         console.log(error);
+
     }
+
 }
+
 asyncHandleSecond();

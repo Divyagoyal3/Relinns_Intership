@@ -1,0 +1,82 @@
+
+/* Universal Selector */
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 62.5%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* Main contanier */
+.container{
+    display: flex;
+    flex-direction: column; 
+    border: 4px solid grey;
+    width:700px;
+    margin:auto;
+    position: relative;
+    top:100px;
+}
+/* Heading Section */
+
+.heading{
+    margin:5px;
+    font-size: 60px;
+    text-align: center;
+    font-weight:bolder;
+    border:2px solid black;
+    color:Red;
+    background-color: #fcfcac;
+}
+/* Grid Section */
+.grid-container {
+    display: grid;
+    font-size: 60px;
+    grid-template-columns: 200px auto;
+    margin: 5px;
+    grid-gap: 20px;
+  }
+  /* Grid Items  */
+  .grid-items {
+    background-color: #08ccfc;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 5px;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  /* for input items */
+  .grid-items-input{
+        background-color: #08ccfc;
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        padding: 5px;
+        font-size: 30px;
+  }
+/* Input type */
+ .format-input-type{
+   margin-left: 30px;
+}
+select{
+    width:150px;
+}
+
+/* button section */
+.submit{
+    margin:5px;
+    background-color: #08ccfc;
+    display: flex;
+    height:50px;
+    justify-content: space-around;
+    align-items: center;
+    border:1px solid rgba(0, 0, 0, 0.8);
+}
+
+/* Buuton appearance */
+button {
+    padding: 10px 10px; /* Adjust as needed */
+    width:200px;
+    color:black;
+    font-size: 20px;
+    margin:5px;
+    font-weight: 500;
+  }

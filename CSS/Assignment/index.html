@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <style>
+        
+/* Universal Selector */
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 62.5%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* Main contanier */
+.container{
+    display: flex;
+    flex-direction: column; 
+    border: 4px solid grey;
+    width:700px;
+    margin:auto;
+    position: relative;
+    top:100px;
+}
+/* Heading Section */
+.heading{
+    margin:5px;
+    font-size: 60px;
+    text-align: center;
+    font-weight:bolder;
+    border:2px solid black;
+    color:Red;
+    background-color: #fcfcac;
+}
+/* Grid Section */
+.grid-container {
+    display: grid;
+    font-size: 60px;
+    font-weight:500;
+    grid-template-columns: 200px auto;
+    margin: 5px;
+    grid-gap: 20px;
+  }
+  /* Grid Items  */
+  .grid-items {
+    background-color: #08ccfc;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 5px;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 20px;
+  }
+  /* for input items */
+  .grid-items-input{
+        background-color: #08ccfc;
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        padding: 5px;
+        font-size: 30px;
+  }
+  .format-label{
+    font-weight: 500;
+  }
+/* Input type */
+ .format-input-type{
+   margin-left: 30px;
+}
+select{
+    width:150px;
+    font-weight: 500;
+}
+
+/* button section */
+.submit{
+    margin:5px;
+    background-color: #08ccfc;
+    display: flex;
+    height:50px;
+    justify-content: space-around;
+    align-items: center;
+    border:1px solid rgba(0, 0, 0, 0.8);
+}
+
+/* Buuton appearance */
+button {
+    padding: 10px 10px; /* Adjust as needed */
+    width:200px;
+    color:black;
+    font-size: 20px;
+    margin:5px;
+    font-weight: 500;
+  }
+    </style>
+</head>
+<body>
+    <!-- Heading section -->
+    <div class ="container">
+     <div class="heading">
+        <h1>Registration Form</h1>
+     </div>
+   <!-- Main section -->
+   <form>
+     <div class="grid-container">
+        <div class="grid-items">
+            <label for="Name" class="format-label">Enter Name</label>
+        </div>
+        <div class="grid-items-input">
+            <input type="text" name="fname" class="format-input-type">
+        </div>
+     </div>
+     <div class="grid-container">
+        <div class="grid-items">
+            <label for="Password" class="format-label">Enter Password</label>
+        </div>
+        <div class="grid-items-input">
+            <input type="text" name="fname" class="format-input-type">
+        </div>
+     </div>
+     <div class="grid-container">
+        <div class="grid-items">
+            <label for="Address" class="format-label align-text">Enter Address</label>
+        </div>
+        <div class="grid-items-input">
+         <textarea  name="w3review" rows="4" cols="30" class="format-input-type"></textarea>
+        </div>
+        
+     </div>
+     <div class="grid-container">
+        <div class="grid-items">
+            <label for="Select Game" class="format-label set-align">Select Game</label>
+        </div>
+        <div class="grid-items-input">
+            <input type="checkbox" id="hockey" name="Hockey" value="Hockey" class="format-input-type">
+            <label for="Hockey">Hockey</label><br>
+            <input type="checkbox" id="football" name="Football" value="Football" class="format-input-type">
+            <label for="Football">Football</label><br>
+            <input type="checkbox" id="badminton" name="Badminton" value="Badminton" class="format-input-type">
+            <label for="Badminton">Badminton</label><br>
+            <input type="checkbox"  id="cricket"  name="Cricket"value="Cricket" class="format-input-type">
+            <label for="Cricket">Cricket</label><br>
+            <input type="checkbox"  name="Volleyball" value="Volleybal" class="format-input-type">
+            <label for="Hockey">Volleyball</label>
+        </div>
+        
+     </div>
+     <div class="grid-container">
+        <div class="grid-items">
+            <label for="Gender" class="format-label">Gender</label>
+        </div>
+        <div class="grid-items-input">
+            <input type="radio" id="Male"class="format-input-type" name="Male" checked>
+            <label for="Male" >Male</label>
+            <input type="radio" id="female" name="female" value="Female">
+            <label for="female">Female</label>
+        </div>
+
+        
+        
+     </div>
+     <div class="grid-container">
+        <div class="grid-items">
+            <label for="Select your Age" class="format-label">Select ur Age</label>
+        </div>
+        <div class="grid-items-input">
+            <select name="cars" id="cars" value="Select" class="format-input-type">
+                <option value="volvo">Select</option>
+                <option value="saab">Saab</option>
+                <option value="opel">Opel</option>
+                <option value="audi">Audi</option>
+              </select>
+        </div>
+     </div>
+
+     <div class="grid-container">
+        <div class="grid-items">
+            <label for="Select your Photo" class="format-label">Select Photo</label>
+        </div>
+        <div class="grid-items-input">
+           <input type="file" class="format-input-type" >
+        </div>
+     </div>
+    
+    </form>
+<!-- Submit button -->
+    <div class="submit">
+        <button type="button">Click me</button>
+        <button type="button">Reset</button>
+        <button type="button">Submit Form</button>
+    </div>
+    </div>
+
+</body>
+</html>
