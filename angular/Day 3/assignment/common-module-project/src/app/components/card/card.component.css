@@ -19,7 +19,7 @@
   }
   
   .card-title {
-    margin-top: 0;
+    margin:10px;
   }
   
   .card-details {
@@ -29,17 +29,21 @@
     margin-bottom: 10px;
   }
   
-  .card-rating {
-    margin: 0;
-  }
+  .card-description,
+.card-rating,
+.card-price{
+    margin:10px;
+}
   
   .add-to-cart-btn {
     background-color: #007bff;
     color: white;
     border: none;
-    padding: 8px 16px;
+    padding: 10px 16px;
     border-radius: 5px;
     cursor: pointer;
+    position: relative;
+    left:110px;
   }
   
   .add-to-cart-btn:hover {
@@ -47,15 +51,15 @@
   }
   .wishlist-icon {
     display: inline-block;
-    background-color: black;
-    padding: 10px;
-    border-radius: 50%;
+    background-color:#007bff;
+    padding:  8px 12px;
+    border-radius: 5px;
+    border:none;
     position: absolute;
-     left:50%;
+     left:80px;
   }
   
   .wishlist-icon i {
     color: white;
-    
   }
   
