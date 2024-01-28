@@ -1,0 +1,44 @@
+.container{
+    margin:25px;
+    padding: 5px;
+    text-align: center;
+    font-size: 20px;
+    background-color: gainsboro;
+    display:flex;
+    justify-content: center;
+    align-items:center ;
+}
+button{
+    background-color: black;
+    color:white;
+    margin-left: 10px;
+    padding:5px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    height:30px;
+    display: flex;
+    flex-direction: row;
+}
+input{
+    border: 2px solid gray;
+    width:250px;
+    height:30px;
+    text-decoration: none;
+    border-radius: 10px;
+}
+.child{
+    margin:15px;
+    padding: 5px;
+    text-align: center;
+    font-size: 20px;
+    background-color: gainsboro;
+    display:flex;
+    justify-content: center;
+    align-items:center ;
+}
+
+h4{
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+}

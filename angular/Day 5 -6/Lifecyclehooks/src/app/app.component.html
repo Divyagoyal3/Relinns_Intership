@@ -1,0 +1,12 @@
+<div class="container">
+  <input type ="text" #input>
+  <button (click)="OnSubmit(input)">Submit</button>
+ 
+</div>
+ <div class="child"><app-demo  [value] = "inputText"> 
+  <!--   ngIf ="destroy" -->
+  <h4>This is Projected Content {{inputText}}</h4>
+
+  <br><br>
+  <!-- <button click() ="DestroyComponent()">Destroy</button> -->
+ </app-demo></div>

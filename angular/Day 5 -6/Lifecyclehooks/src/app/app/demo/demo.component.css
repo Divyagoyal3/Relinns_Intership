@@ -1,0 +1,9 @@
+.demo{
+    text-align: center;
+    margin:15px;
+    padding:10px;
+    background-color: aliceblue;
+    color:black;
+    flex-direction: column;
+
+}
