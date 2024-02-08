@@ -1,0 +1,42 @@
+<!-- @for(post of posts;track post.id)  angular 17 feature-->
+
+<div class="container">
+<div class="card" *ngFor="let post of posts">
+    <img [src]="post.image" alt="Product Image" class="card-image"> 
+    <div class="card-body">
+      <h5 class="card-title card-overflow">{{post.title}}</h5>
+      <p class="card-category"><span class="card-category-text">Category : </span>{{post.category}}</p>
+      <p class="card-price">Price: ${{post.price}}</p>
+      <p class="card-rate rating">Rating: {{post.rating.rate}}</p>  
+      <button class="add-to-cart">Add to Cart</button> 
+      <span class="wishlist-icon">
+        <!-- Heart icon -->
+        <i class="fas fa-heart"></i>
+      </span>
+    </div>
+  </div>
+</div>
+  
+
+<script>
+  // Example rating value (can be dynamically fetched from your backend)
+//   var ratingValue = 3.5;
+
+//   // Function to dynamically generate star icons based on the rating value
+//   function generateStars(rating) {
+//     var stars = '';
+//     for (var i = 1; i <= 5; i++) {
+//       if (i <= rating) {
+//         stars += '<i class="fas fa-star"></i>';
+//       } else if (i - rating <= 0.5) {
+//         stars += '<i class="fas fa-star-half-alt"></i>';
+//       } else {
+//         stars += '<i class="far fa-star"></i>';
+//       }
+//     }
+//     return stars;
+//   }
+
+//   // Set the rating stars in the HTML
+//   document.getElementById('rating').innerHTML = generateStars(ratingValue);
+// </script>
