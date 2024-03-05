@@ -36,10 +36,10 @@ export class AppComponent {
   {
     if(!this.editMode){
     const headers = new HttpHeaders({'myHeader':'divya goyal'});
-    console.log('prodct', products);
+    console.log('product', products);
     this.http.post<{name:string}>('https://angular-project-http-fbe41-default-rtdb.firebaseio.com/products.json',products,{headers: headers})
     .subscribe((res:any)=>{
-      console.log('respose', res.data);
+      console.log('response', res.data);
     });
   }else{
   
